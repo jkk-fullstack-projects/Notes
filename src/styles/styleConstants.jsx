@@ -1,0 +1,9 @@
+export const noteItemClasses = "flex justify-between items-center bg-gray-100 p-2 rounded mb-2";
+export const noteButtonBaseClasses = "whitespace-nowrap py-1 px-3 rounded text-sm font-medium leading-none text-center w-48 md:w-60";
+export const noteButtonImportantClasses = "bg-red-500 hover:bg-red-700 text-white";
+export const noteButtonNotImportantClasses = "bg-green-500 hover:bg-green-700 text-white";
+export const inputClasses = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline";
+export const submitButtonClasses = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2";
+export const notificationBaseClasses = "border px-4 py-3 rounded relative mb-4";
+export const notificationErrorClasses = "text-red-600 bg-red-100 border-red-400";
+export const notificationSuccessClasses = "text-green-600 bg-green-100 border-green-400";

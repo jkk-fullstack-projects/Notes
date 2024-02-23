@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import Note from './components/Note'
 import noteService from './services/NoteService.jsx'
 import Notification from './utilities/Notification.jsx';
 import './styles/output.css';
+import { inputClasses, submitButtonClasses } from './styles/styleConstants.jsx'
 
 
 const App = () => {
@@ -59,10 +60,9 @@ const App = () => {
         setNewNote('');
         displayMessage(
           `added note '${newNote}' successfully`, 
-          'normal', 200000);
+          'normal', 2000);
       })
       .catch(error => {
-        // Handle potential errors from note creation
         displayMessage(
           'An error occurred while adding the note', 
           'error', 
@@ -96,17 +96,16 @@ const App = () => {
           )}
         </ul>
         <form onSubmit={addNote}>
-        <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={newNote}
-            onChange={handleNoteChange}
+          <input
+              className={inputClasses}
+              value={newNote}
+              onChange={handleNoteChange}
           />
           <button 
             type="submit"
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-            >
+            className={submitButtonClasses}>
               save
-            </button>
+          </button>
         </form> 
       </div>
     )

@@ -19,6 +19,11 @@
       "id": "b00f",
       "content": "Better get going!",
       "important": true
+    },
+    {
+      "id": "a262",
+      "content": "React has JSX",
+      "important": true
     }
   ]
 }
