@@ -8,11 +8,13 @@ import { inputClasses, submitButtonClasses } from './styles/styleConstants.jsx'
 
 
 const App = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(null);
   const [newNote, setNewNote] = useState('');
   const [showAll, setShowAll] = useState(true);
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('normal');
+
+ 
 
   useEffect(() => {
     noteService
@@ -21,6 +23,11 @@ const App = () => {
         setNotes(initialNotes)
       })
   }, []);
+
+  // not rendering if notes is null
+  if (!notes) {
+    return null
+  }
 
   const displayMessage = (msg, type = 'normal', timeout = 2000) => {
     setMessage(msg);
@@ -41,7 +48,7 @@ const App = () => {
     })
     .catch(error => {
       displayMessage(
-          'An error occurred while adding the note', 
+          'An error occurred while changing the note importance', 
           'error', 
           5000);
       setNotes(notes.filter(n => n.id !== id));
